@@ -18,7 +18,9 @@ class Api::V1::EventsController < ApplicationController
       title: params[:title],
       photo: params[:photo],
       date: params[:date],
+      time: params[:time],
       ticket_link: params[:ticket_link],
+      location: params[:location],
       about: params[:about])
     if (@event.save)
       render json: @event.as_json(only: [:id, :title])
