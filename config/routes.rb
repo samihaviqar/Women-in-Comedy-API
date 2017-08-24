@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
 
   #for jwt authentication
+  post 'auth_user' => 'authentication#authenticate_user'
   get 'home' => 'home#index'
 
   namespace :api do
