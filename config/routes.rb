@@ -10,11 +10,16 @@ Rails.application.routes.draw do
   #for getting users connections
   get '/api/v1/users/connections', to: 'api/v1/connection_requests#get_connections'
 
+
+  #for jwt authentication
+  get 'home' => 'home#index'
+
   namespace :api do
     namespace :v1 do
       resources :users
     end
   end
+
   namespace :api do
     namespace :v1 do
       resources :sessions
