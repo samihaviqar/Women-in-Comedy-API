@@ -1,5 +1,5 @@
 class Api::V1::SessionsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  #skip_before_action :verify_authenticity_token
   def create
     user = User.where(email: params[:email]).first
     if user && user.valid_password?(params[:password])
