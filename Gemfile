@@ -11,6 +11,7 @@ gem 'rails', '~> 5.0.2'
 # Use pg as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
+gem 'paperclip', '~> 5.0.0'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
