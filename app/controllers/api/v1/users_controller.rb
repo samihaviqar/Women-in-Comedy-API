@@ -4,7 +4,7 @@ class Api::V1::UsersController < ApplicationController
 		all_users = User.all
 		users = []
 		all_users.each do |user|
-			user = {firstName: user[:first_name], lastName: user[:last_name], id: user[:id]}
+			user = {firstName: user[:first_name], lastName: user[:last_name], id: user[:id], admin: user[:admin]}
 			users.push(user)
 		end
 		render json: users
@@ -26,7 +26,8 @@ class Api::V1::UsersController < ApplicationController
 			video_link: params[:video],
 			gender: params[:gender],
 			training: params[:training],
-			experience: params[:experience]
+			experience: params[:experience],
+			admin: params[:admin]
 		)
 		if (user.save)
 			render json: user.as_json(only: [:id, :email])
@@ -36,7 +37,7 @@ class Api::V1::UsersController < ApplicationController
 	def fetch_user_info
 		id = request.headers['id'].to_i
 		user = User.find_by(id: id)
-		user_info = {id: user[:id], firstName: user[:first_name], lastName: user[:last_name], bio: user[:about]}
+		user_info = {id: user[:id], firstName: user[:first_name], lastName: user[:last_name], bio: user[:about], admin: user[:admin]}
 		render json: user_info
 	end
 
@@ -65,7 +66,8 @@ class Api::V1::UsersController < ApplicationController
 			location: params[:location],
 			website: params[:website],
 			training: params[:training],
-			experience: params[:experience]
+			experience: params[:experience],
+			admin: params[:admin]
 		)
 
 		render 'show.json.jbuilder'

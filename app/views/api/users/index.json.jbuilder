@@ -24,6 +24,7 @@ json.array! @users.each do |user|
 	json.website user.website
 	json.training user.training
 	json.experience user.experience
+	json.admin user.admin
 
 			json.comments user.comments.each do |comment|
 				json.commenter_id comment.commenter_id
