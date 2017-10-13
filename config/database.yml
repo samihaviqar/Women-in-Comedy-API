@@ -17,8 +17,12 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+<<<<<<< HEAD
   host: localhost
 
+=======
+  
+>>>>>>> 88231313367a3393eb2bcb434f4f7aaac6c04334
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
